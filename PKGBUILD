@@ -20,6 +20,7 @@ pkgver() {
 package() {
     cd $pkgname
     tar -xzvf $pkgname.tar.gz
-    install -Dm644 "default/index.theme" "$pkgdir/usr/share/icons/default/index.theme"
+    mkdir -p "$pkgdir/usr/share/icons/"
+    cp -r "default" "$pkgdir/usr/share/icons/"
     cp -r "$pkgname" "$pkgdir/usr/share/icons/"
 }
